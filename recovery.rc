@@ -8,19 +8,20 @@ on init
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
 
-    # for clockworkmod
+# for clockworkmod
     symlink /misc /etc
 
-    # create mount points for CWM
-    mkdir /sdcard 0000 system system
-    mkdir /emmc 0000 system system
+    mkdir /sdcard
+    mkdir /sdcard1
     mkdir /preload
     mkdir /system
-    mkdir /data 0771 system system
-    mkdir /cache 0770 system cache
+    mkdir /system2
+    mkdir /data
+    mkdir /cache
     mkdir /efs
     mkdir /tmp
     mkdir /dbdata
+    mkdir /persist
 
     mkdir /mnt 0775 root root
 
@@ -34,8 +35,6 @@ on early-fs
 
     # parameter block
     mkdir /mnt/.lfs 0755 root root
-    insmod /lib/modules/j4fs.ko
-    mount j4fs /dev/block/mmcblk0p4 /mnt/.lfs
 
 on fs
     mount tmpfs tmpfs /tmp mode=0755    
@@ -65,6 +64,9 @@ on post-fs
     write /proc/sys/kernel/sched_compat_yield 1
     write /proc/sys/kernel/sched_child_runs_first 0
 
+    insmod /lib/modules/j4fs.ko
+    mount j4fs /dev/block/mmcblk0p4 /mnt/.lfs
+
     # let recovery handle mounting /system
     umount /system
 
@@ -85,7 +87,6 @@ service console /sbin/sh
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
-	disabled
 
 on property:persist.service.adb.enable=1
     start adbd
