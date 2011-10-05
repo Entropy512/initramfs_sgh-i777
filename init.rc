@@ -632,7 +632,6 @@ on boot
 
     class_start default
 
-
 ## Daemon processes to be run by init.
 ##
 service ueventd /sbin/ueventd
@@ -804,6 +803,10 @@ service installd /system/bin/installd
     socket installd stream 600 system system
 
 service flash_recovery /system/etc/install-recovery.sh
+    oneshot
+
+service root_inject /system/bin/logwrapper /vendor/scripts/install_su.sh
+    user root
     oneshot
 
 service racoon /system/bin/racoon
