@@ -809,6 +809,10 @@ service root_inject /system/bin/logwrapper /vendor/scripts/install_su.sh
     user root
     oneshot
 
+service tweak_iosched /system/bin/logwrapper /vendor/scripts/tweak_scheduler.sh
+    user root
+    oneshot
+
 service racoon /system/bin/racoon
     socket racoon stream 600 system system
     # racoon will setuid to vpn after getting necessary resources.
