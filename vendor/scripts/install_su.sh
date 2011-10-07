@@ -1,3 +1,4 @@
+#!/sbin/sh
 # root injection script
 # ported from the Voodoo Lagfix suite
 # originally written by ??????
