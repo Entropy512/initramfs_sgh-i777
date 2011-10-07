@@ -813,6 +813,10 @@ service tweak_iosched /system/bin/logwrapper /vendor/scripts/tweak_scheduler.sh
     user root
     oneshot
 
+service run_parts /system/bin/logwrapper /vendor/scripts/run-parts.sh
+    user root
+    oneshot
+
 service racoon /system/bin/racoon
     socket racoon stream 600 system system
     # racoon will setuid to vpn after getting necessary resources.
@@ -971,3 +975,4 @@ on property:encryption.bootmode=remount
     start immvibed
     start media
     start tvout 
+
