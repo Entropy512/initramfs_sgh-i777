@@ -4,7 +4,7 @@
 # originally written by ??????
 
 name='secure su binary for Superuser apk'
-binary_source='/vendor/scripts/su/su-2.3.6.1-ef'
+binary_source='/vendor/scripts/su/su-3.0'
 apk_source='/vendor/scripts/su/Superuser.apk'
 binary_dest='/system/xbin/su'
 apk_dest='/system/app/Superuser.apk'
