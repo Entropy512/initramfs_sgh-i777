@@ -805,9 +805,9 @@ service installd /system/bin/installd
 service flash_recovery /system/etc/install-recovery.sh
     oneshot
 
-service root_inject /system/bin/logwrapper /vendor/scripts/install_su.sh
-    user root
-    oneshot
+#service root_inject /system/bin/logwrapper /vendor/scripts/install_su.sh
+#    user root
+#    oneshot
 
 service tweak_iosched /system/bin/logwrapper /vendor/scripts/tweak_scheduler.sh
     user root
