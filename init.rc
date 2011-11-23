@@ -258,8 +258,8 @@ on post-fs
     mkdir /data/misc/systemkeys 0700 system system
     mkdir /data/misc/vpn/profiles 0770 system system
     # give system access to wpa_supplicant.conf for backup and restore
-    mkdir /data/misc/wifi 0770 wifi wifi
-    chmod 0770 /data/misc/wifi
+    mkdir /data/misc/wifi 0777 wifi system
+    chmod 0777 /data/misc/wifi
     mkdir /data/misc/radio 0775 radio radio
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
@@ -919,8 +919,8 @@ on property:encryption.bootmode=remount
     mkdir /data/misc/systemkeys 0700 system system
     mkdir /data/misc/vpn/profiles 0770 system system
     # give system access to wpa_supplicant.conf for backup and restore
-    mkdir /data/misc/wifi 0770 wifi wifi
-    chmod 0770 /data/misc/wifi
+    mkdir /data/misc/wifi 0777 wifi system
+    chmod 0777 /data/misc/wifi
     mkdir /data/misc/radio 0775 radio radio
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
