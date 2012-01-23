@@ -982,12 +982,8 @@ on property:encryption.bootmode=remount
     start immvibed
     start media
     start tvout 
-<<<<<<< HEAD
+    start DR-daemon
+    start mobex-daemon 
 
 on property:sys.boot_completed=1
     stop samsungani
-
-=======
-    start DR-daemon
-    start mobex-daemon 
->>>>>>> att_updates
