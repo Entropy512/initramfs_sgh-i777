@@ -158,6 +158,8 @@
              <spinnerItem name="cfq" value="cfq"/> 
 <!--             <spinnerItem name="V(R)" value="vr"/> -->
       </spinner>
+
+      <checkbox description="Disable Per-file fsync().  This can improve performance (especially database writes) but comes with a risk of data corruption.  USE AT YOUR OWN RISK" name="File Fsync Disable" action="fsync_disable" label="PFsync Disable"/>
 <!--
       <spinner description="Charge current setting" name="Charge Current" action="chargecurrent">
              <spinnerItem name="AC:650mA, Misc,USB:450mA (Stock)" value="1"/> 

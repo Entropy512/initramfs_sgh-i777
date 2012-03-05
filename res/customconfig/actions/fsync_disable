@@ -1,0 +1,19 @@
+#!/sbin/busybox sh
+
+if [ "a$2" != "a" ];then
+  fsyncdis=$2
+fi
+
+case "${fsyncdis}" in
+  on)
+    echo "1" > /sys/module/sync/parameters/fsync_disabled
+    ;;
+  off)
+    echo "0" > /sys/module/sync/parameters/fsync_disabled
+    ;;
+  *)
+    fsyncdis=off
+    ;;
+esac;
+
+echo $fsyncdis
