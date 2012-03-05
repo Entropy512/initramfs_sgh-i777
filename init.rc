@@ -174,6 +174,10 @@ on post-fs
     chown system system /data/clipboard
     chmod 0775 /data/clipboard
 
+    # Create directory for universal custom config
+    mkdir /data/.uci
+    chmod 777 /data/.uci
+
     # SEC_DMCRYPT move mounting efs befor apply_disk_policy
     #mkdir /efs
     #mount rfs /dev/block/mmcblk0p1 /efs nosuid nodev check=no
@@ -808,6 +812,10 @@ service installd /system/bin/installd
     socket installd stream 600 system system
 
 service flash_recovery /system/etc/install-recovery.sh
+    oneshot
+
+service uci /vendor/scripts/run_uci.sh
+    user root
     oneshot
 
 service run_parts /system/bin/logwrapper /vendor/scripts/run-parts.sh
