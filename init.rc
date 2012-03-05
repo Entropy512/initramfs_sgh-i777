@@ -814,7 +814,7 @@ service installd /system/bin/installd
 service flash_recovery /system/etc/install-recovery.sh
     oneshot
 
-service uci /vendor/scripts/run_uci.sh
+service uci /system/bin/logwrapper /vendor/scripts/run_uci.sh
     user root
     oneshot
 
