@@ -13,22 +13,18 @@
 		name="loadl" action="generic /sys/module/pm_hotplug/parameters/loadl" unit="" min="0" reversed="false" step="1" max="100"/>
        <seekBar description="Sets second core kick-in threshold for screen-on state" 
 		name="loadh" action="generic /sys/module/pm_hotplug/parameters/loadh" unit="" min="0" reversed="false" step="1" max="100"/>
-<!--
        <seekBar description="Sets second core kick-out threshold for screen-off state" 
 		name="loadl_scroff" action="generic /sys/module/pm_hotplug/parameters/loadl_scroff" unit="" min="0" reversed="false" step="1" max="100"/>
        <seekBar description="Sets second core kick-in threshold for screen-off state" 
 		name="loadh_scroff" action="generic /sys/module/pm_hotplug/parameters/loadh_scroff" unit="" min="0" reversed="false" step="1" max="100"/>
--->
        <seekBar description="Sets hot plug sampling intervals for screen-on state" 
 		name="rate" action="generic /sys/module/pm_hotplug/parameters/rate" unit="" min="50" reversed="false" step="50" max="2000"/>
-<!--
        <seekBar description="Sets hot plug sampling intervals for screen-on state when the second core is on" 
 		name="rate_cpuon" action="generic /sys/module/pm_hotplug/parameters/rate_cpuon" unit="" min="50" reversed="false" step="50" max="2000"/>
        <seekBar description="Sets hot plug sampling intervals for screen-off state" 
 		name="rate_scroff" action="generic /sys/module/pm_hotplug/parameters/rate_scroff" unit="" min="50" reversed="false" step="50" max="2000"/>
        <seekBar description="Set frequency below which second core will not be turned on, regardless of thresholds." 
 		name="freq_cpu1on" action="generic /sys/module/pm_hotplug/parameters/freq_cpu1on" unit="Hz" min="100000" reversed="false" step="100000" max="1200000"/>
--->
     </settingsPane>
 
     <settingsPane description="" 
@@ -36,8 +32,8 @@
       <spinner description="Sets the CPU Idle Mode. AFTR+LPA is the default and best for the battery life but if you have problems try Idle+LPA." name="CPU Idle Mode" action="generic /sys/module/cpuidle/parameters/enable_mask">
              <spinnerItem name="AFTR + LPA (best battery)" value="3"/> 
              <spinnerItem name="Idle + LPA (Samsung default)" value="2"/> 
-             <!-- spinnerItem name="Idle only" value="0"/> 
-             <spinnerItem name="AFTR only" value="1"/ --> 
+             <spinnerItem name="Idle only" value="0"/> 
+             <!-- <spinnerItem name="AFTR only" value="1"/ --> 
       </spinner>
 <!--
       <seekBar description="Sets the sched_mc value which changes the cpu scheduler behaviour for multi-cpu systems. 0 is Samsung kernel's default value which turns sched_mc off. Setting it to 1 means that the first core will be tried to be loaded more and setting it to 2 will bias task wake-ups to semi-idle cpu package for power savings. Siyahkernel has sched_mc set to 1 as default."
